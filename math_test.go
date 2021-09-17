@@ -5,39 +5,39 @@ import (
 	"testing"
 )
 
-// func TestMathAdd1(t *testing.T) {
-// 	first := 111
-// 	second := 222
-// 	want := 333
+func TestMathAdd1(t *testing.T) {
+	first := 111.0
+	second := 222.0
+	want := 333.0
 
-// 	got := add(first, second)
+	got := add(first, second)
 
-// 	if got != want {
-// 		t.Fatalf(`Add %v plus %v returned %v. Wanted %v`, first, second, got, want)
-// 	}
-// }
-// func TestMathAdd2(t *testing.T) {
-// 	first := 245
-// 	second := 0
-// 	want := 245
+	if got != want {
+		t.Fatalf(`Add %v plus %v returned %v. Wanted %v`, first, second, got, want)
+	}
+}
+func TestMathAdd2(t *testing.T) {
+	first := 245.0
+	second := 0.0
+	want := 245.0
 
-// 	got := add(first, second)
+	got := add(first, second)
 
-// 	if got != want {
-// 		t.Fatalf(`Add %v plus %v returned %v. Wanted %v`, first, second, got, want)
-// 	}
-// }
-// func TestMathAdd3(t *testing.T) {
-// 	first := 333
-// 	second := 123
-// 	want := 456
+	if got != want {
+		t.Fatalf(`Add %v plus %v returned %v. Wanted %v`, first, second, got, want)
+	}
+}
+func TestMathAdd3(t *testing.T) {
+	first := 333.0
+	second := 123.0
+	want := 456.0
 
-// 	got := add(first, second)
+	got := add(first, second)
 
-// 	if got != want {
-// 		t.Fatalf(`Add %v plus %v returned %v. Wanted %v`, first, second, got, want)
-// 	}
-// }
+	if got != want {
+		t.Fatalf(`Add %v plus %v returned %v. Wanted %v`, first, second, got, want)
+	}
+}
 
 func TestAddAll(t *testing.T) {
 	var tests = []struct {
@@ -51,8 +51,6 @@ func TestAddAll(t *testing.T) {
 	}
 
 	for _, tt := range tests {
-		// TODO: get notes on why this is necessary
-		tt := tt
 		testname := fmt.Sprintf("Add:%v,%v", tt.first, tt.second)
 
 		t.Run(testname, func(t *testing.T) {
