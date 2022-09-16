@@ -1,4 +1,4 @@
 # go-test-demos
 
-This project is a companion to a talk about the [built-in testing framework in Go](https://noti.st/scottmcallister/8S69uk/built-in-testing-in-go-is-more-than-just-passable).
+This project is a companion to the talk, "Built-In Testing in Go is More Than Just Passable".
 
