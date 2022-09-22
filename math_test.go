@@ -13,9 +13,10 @@ func TestMathAdd1(t *testing.T) {
 	got := add(first, second)
 
 	if got != want {
-		t.Fatalf(`Add %v plus %v returned %v. Wanted %v`, first, second, got, want)
+		t.Fatalf(`TestMathAdd1 Failed: %v plus %v should have been %v but was %v`, first, second, want, got)
 	}
 }
+
 func TestMathAdd2(t *testing.T) {
 	first := 245.0
 	second := 0.0
@@ -27,15 +28,14 @@ func TestMathAdd2(t *testing.T) {
 		t.Fatalf(`Add %v plus %v returned %v. Wanted %v`, first, second, got, want)
 	}
 }
-func TestMathAdd3(t *testing.T) {
-	first := 333.0
-	second := 123.0
-	want := 456.0
+func TestMathIntegration(t *testing.T) {
+	first := 100.0
+	second := 200.0
+	want := 30000.0
 
-	got := add(first, second)
-
+	got := multiply(add(first, second), subtract(second, first))
 	if got != want {
-		t.Fatalf(`Add %v plus %v returned %v. Wanted %v`, first, second, got, want)
+		t.Errorf(`Should be %v. Got %v`, want, got)
 	}
 }
 
@@ -45,8 +45,8 @@ func TestAddAll(t *testing.T) {
 	}{
 		{1, 2, 3},
 		{4, 5, 9},
-		{123, 500, 623},
-		{987, 111, 1098},
+		{123, -500, -377},
+		{-987, -111, -1098},
 		{5, 5, 10},
 	}
 
@@ -62,7 +62,7 @@ func TestAddAll(t *testing.T) {
 		})
 	}
 	t.Run("integration", func(t *testing.T) {
-		first := 100.0
+		first := 200.0
 		second := 200.0
 		want := 30000.0
 
